@@ -1,0 +1,40 @@
+use std::{
+    fs,
+    time::{Duration, Instant},
+};
+
+pub fn solve_part1(_input: &str) -> u128 {
+    // TODO: implement part 1
+    0
+}
+
+pub fn solve_part2(_input: &str) -> u128 {
+    // TODO: implement part 2
+    0
+}
+
+pub fn solve_from_file(path: &str) -> (u128, Duration, u128, Duration) {
+    let data = fs::read_to_string(path).expect("failed to read input");
+    
+    let p1start = Instant::now();
+    let p1answer = solve_part1(&data);
+    let p1time = p1start.elapsed();
+
+    let p2start = Instant::now();
+    let p2answer = solve_part2(&data);
+    let p2time = p2start.elapsed();
+
+    (p1answer, p1time, p2answer, p2time)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn example() {
+        let input = "";
+        assert_eq!(solve_part1(input), 0);
+        assert_eq!(solve_part2(input), 0);
+    }
+}
